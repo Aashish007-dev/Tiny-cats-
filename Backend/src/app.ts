@@ -1,5 +1,6 @@
 import express, { type Request, type Response } from 'express';
-import catRoutes from './routes/cat.routes.ts'
+import catRoutes from './routes/cat.routes.ts';
+import aiRoutes from './routes/ai.routes.ts';
 
 const app = express();
 
@@ -11,5 +12,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use("/api/cats", catRoutes);
+app.use("/api/ai", aiRoutes);
+
 
 export default app;
